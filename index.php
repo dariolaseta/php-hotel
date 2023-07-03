@@ -42,11 +42,53 @@
 ?>
 
 <?php 
-    for ($i=0; $i < count($hotels); $i++) { 
+    /*for ($i=0; $i < count($hotels); $i++) { 
         echo "<p>" . $hotels[$i]['name'] . "</p>";
         echo "<p>" . $hotels[$i]['description'] . "</p>";
         echo "<p>" . $hotels[$i]['parking'] . "</p>";
         echo "<p>" . $hotels[$i]['vote'] . "</p>";
         echo "<p>" . $hotels[$i]['distance_to_center'] . "</p>";
-    }
+    }*/
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PHP Hotels</title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Hotel</th>
+                    <th>Description</th>
+                    <th>Parking</th>
+                    <th>Vote</th>
+                    <th>Distance to Center</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+                foreach ($hotels as $key => $hotel){
+                ?>
+                    <tr>
+                        <th><?php echo $key ?></th>
+
+                        <?php
+                        foreach ($hotel as $key => $info){
+                        ?>
+                            <td><?php echo $info ?></td>
+                        <?php
+                        }
+                        ?>
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+    </body>
+</html>
