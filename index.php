@@ -40,3 +40,13 @@
 
     ];
 ?>
+
+<?php 
+    for ($i=0; $i < count($hotels); $i++) { 
+        echo "<p>" . $hotels[$i]['name'] . "</p>";
+        echo "<p>" . $hotels[$i]['description'] . "</p>";
+        echo "<p>" . $hotels[$i]['parking'] . "</p>";
+        echo "<p>" . $hotels[$i]['vote'] . "</p>";
+        echo "<p>" . $hotels[$i]['distance_to_center'] . "</p>";
+    }
+?>
